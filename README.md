@@ -201,6 +201,11 @@ gcloud secrets versions add cloud_sql_connection_name_secret --data-file="cloud_
 # Add a secret version from the contents of a file on disk.
 # You can also add a secret version directly on the command line, 
 # but this is discouraged because the plaintext will appear in your shell history.
+
+# Grant the Manager Secret Accessor role to our Service Account
+gcloud projects add-iam-policy-binding Project-A \ 
+   --member=serviceAccount:pets-api-cred@Project-A.iam.gserviceaccount.com \ 
+   --role="roles/secretmanager.secretAccessor"
 ```
 
 Then we have to access to the information by code. [Docs](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#access)
