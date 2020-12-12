@@ -1,13 +1,15 @@
 # Cloud-SQL-Connection
 Post for connecting a Cloud Run with a Cloud SQL using Cloud SQL Proxy and Secret Manager
 
-A secure connection is mostly a networking topic because it takes infrastructure tasks. GCP has resources and tools that we can use to resolve these tasks as Devs.
+A secure connection is mostly a networking topic because it takes infrastructure tasks. GCP has resources and tools that we can use to resolve those tasks as Devs.
 
 In this case, we have a API that returns a list of pets from a MySQL Database. 
 
 Our objective is to connect our API from **Project A** to a MySQL Database on **Project B** using the ready-to-use tools from GCP.
 
->*Sure, there are other ways to connect to a DB instance like VPN, VPC (for privates IPs), Firewall and etc. However, as developers we can take advantage of GCP resources, not need to worry about infrastructure, just code!*
+>*Sure, there are other ways to connect to a DB instance like VPN, VPC for privates IPs (for serverless resources you can use the [Serverless VPC Access connector](https://dev.to/alvardev/gcp-cloud-functions-with-a-static-ip-3fe9) e.g. Cloud Functions), Firewall and etc. However, as developers we can take advantage of GCP resources, not need to worry about infrastructure, just code!*
+
+>*By the way, this connection can be used in only one GCP project too*
 
 ##Architecture
 
